@@ -2,60 +2,325 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Captain’s Log: Stardate – Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support and help for Fellowship of LOTR — contact Agile Conqueror Company." />
+  <title>Support | Fellowship of LOTR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --bg-deep: #0a0b0c;
+      --bg-card: rgba(18, 14, 12, 0.92);
+      --gold: #c9a227;
+      --gold-dim: rgba(201, 162, 39, 0.55);
+      --crimson: #8b2635;
+      --text: #e8e0d4;
+      --text-muted: #a89880;
+      --border: rgba(201, 162, 39, 0.35);
+      --link: #d4b84a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
-      max-width: 720px;
-      margin: 40px auto;
-      padding: 0 16px;
-      line-height: 1.6;
-      color: #111827;
+      font-family: "Crimson Pro", Georgia, "Times New Roman", serif;
+      font-size: 1.125rem;
+      line-height: 1.75;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(139, 38, 53, 0.25), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(201, 162, 39, 0.08), transparent),
+        linear-gradient(180deg, #0f0d0b 0%, var(--bg-deep) 40%, #060607 100%);
+      min-height: 100vh;
+      padding: 2rem 1rem 4rem;
     }
+
+    .wrap { max-width: 720px; margin: 0 auto; }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 0.75rem;
+    }
+
     h1 {
-      font-size: 28px;
-      margin-bottom: 12px;
+      font-family: "Cinzel", serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
     }
+
+    .subtitle {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    main {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+    }
+
     h2 {
-      margin-top: 24px;
-      font-size: 20px;
+      font-family: "Cinzel", serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 2rem 0 0.75rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--gold-dim);
     }
-    a { text-decoration: none; color: #2563eb; }
+
+    h2:first-child { margin-top: 0; }
+
+    p { margin-bottom: 1rem; }
+
+    ul { margin: 0 0 1rem 1.25rem; }
+    li { margin-bottom: 0.4rem; }
+
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { color: #f0d878; }
+
+    strong { color: var(--text); font-weight: 600; }
+
+    .ornament {
+      text-align: center;
+      color: var(--gold-dim);
+      margin: 1.5rem 0;
+      letter-spacing: 0.5em;
+      font-size: 0.75rem;
+    }
+
+    .contact-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0 1.5rem;
+      background: rgba(201, 162, 39, 0.06);
+    }
+
+    .contact-card p:last-child { margin-bottom: 0; }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: "Cinzel", serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.65rem 1.1rem;
+      border-radius: 8px;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: rgba(201, 162, 39, 0.15);
+      color: #f0d878;
+    }
+
+    .btn-primary {
+      background: rgba(139, 38, 53, 0.35);
+      border-color: var(--crimson);
+      color: var(--text);
+    }
+
+    .btn-primary:hover {
+      background: rgba(139, 38, 53, 0.55);
+      color: #fff;
+    }
+
+    .faq-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .faq-q {
+      font-family: "Cinzel", serif;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.04em;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    footer a { color: var(--gold-dim); }
+
+    @media (max-width: 480px) {
+      main { padding: 1.5rem 1.15rem; }
+      body { font-size: 1.05rem; }
+    }
   </style>
 </head>
 <body>
-  <h1>Captain’s Log: Stardate – Support</h1>
+  <div class="wrap">
+    <header>
+      <p class="eyebrow">Middle-earth · Council of Aid</p>
+      <h1>Support</h1>
+      <p class="subtitle">Fellowship of LOTR</p>
+    </header>
 
-  <p>
-    This page provides support information for the <strong>Captain’s Log: Stardate</strong> mobile application.
-    If you have any questions, need assistance, or want to report an issue, you’re in the right place.
-  </p>
+    <main>
+      <h2>Need Help?</h2>
+      <p>
+        Welcome, traveler. If something in the App is not working as expected — purchases,
+        subscriptions, soundboard clips, missions, or anything else — we are here to help.
+      </p>
 
-  <h2>Contact</h2>
-  <p>
-    For technical issues, feature requests, feedback, account matters, or general inquiries, please contact:
-  </p>
-  <p>
-    <strong>Email:</strong>
-    <a href="mailto:hakanxcevik7@gmail.com">hakanxcevik7@gmail.com</a>
-  </p>
+      <div class="contact-card">
+        <p><strong>Developer</strong><br />Hakan Çevik · Agile Conqueror Company</p>
+        <p>
+          <strong>Email</strong><br />
+          <a href="mailto:hakanxcevik7@gmail.com">hakanxcevik7@gmail.com</a>
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          When contacting us, please include your device model, Android version, and a short
+          description of the issue. For billing problems, mention the Google account used for purchase.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="mailto:hakanxcevik7@gmail.com?subject=Fellowship%20of%20LOTR%20Support">Send Email</a>
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.agile.fellowship.lotr" target="_blank" rel="noopener noreferrer">Google Play</a>
+        </div>
+      </div>
 
-  <h2>Account & Data</h2>
-  <p>
-    You may request data deletion, log removal, or account-related assistance via email.
-    Please contact us from the email address you used inside the app and include any relevant details.
-  </p>
+      <div class="ornament">✦ ✦ ✦</div>
 
-  <h2>Abuse & Safety</h2>
-  <p>
-    To report inappropriate content, bugs, or security concerns, email us with screenshots or descriptions.
-    All reports are reviewed according to our guidelines and applicable laws.
-  </p>
+      <h2>Frequently Asked Questions</h2>
 
-  <h2>Legal</h2>
-  <p>
-    &copy; 2025 Captain’s Log: Stardate. All rights reserved.
-  </p>
+      <div class="faq-item">
+        <p class="faq-q">How do I restore my purchases?</p>
+        <p>
+          Open the App → <strong>Settings</strong> (Officer tab) → tap <strong>Restore purchases</strong>.
+          You can also restore from the subscription screen in the Treasury. Make sure you are signed
+          into the same Google Play account used for the original purchase.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">My subscription is active but premium content is locked.</p>
+        <p>
+          Try restoring purchases first. If the issue continues, force-close the App, check your
+          internet connection, and reopen it. Subscription status is verified through Google Play
+          and RevenueCat — it may take a few minutes to sync after a new purchase.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How do I cancel my subscription?</p>
+        <p>
+          Subscriptions are managed through Google Play, not inside the App. Go to
+          <strong>Google Play → Payments &amp; subscriptions → Subscriptions</strong>, select
+          Fellowship of LOTR, and cancel. Uninstalling the App does <strong>not</strong> cancel billing.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">I bought Mithril Coins but did not receive them.</p>
+        <p>
+          Wait a moment and restart the App. If Coins still do not appear, use Restore purchases in
+          Settings. For unresolved cases, email us with your Google Play order ID from the purchase receipt.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">A soundboard clip will not play.</p>
+        <p>
+          Make sure the quote is unlocked (free, purchased with Mithril, or included in your premium
+          subscription). Check device volume and “Do Not Disturb” settings. If you see a “missing file”
+          message, update the App to the latest version from Google Play.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Rewarded ads are not loading.</p>
+        <p>
+          Ads require an internet connection and may not be available in all regions or at all times.
+          Premium subscribers may have an ad-free experience. Free users have a daily limit on some
+          rewarded ad slots — try again the next day or consider a premium subscription.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">I lost my journal entries after reinstalling.</p>
+        <p>
+          Journal and archive data are stored locally on your device. Reinstalling the App or clearing
+          app data may permanently delete entries unless you have a device backup that includes app data.
+          We recommend exporting or backing up important content before uninstalling.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How do I request a refund?</p>
+        <p>
+          Refunds for Google Play purchases are handled by Google according to their policies.
+          Visit
+          <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer">Google Play refund help</a>
+          or request a refund through your Play purchase history. We cannot issue refunds directly.
+        </p>
+      </div>
+
+      <h2>App Information</h2>
+      <ul>
+        <li><strong>App name:</strong> Fellowship of LOTR</li>
+        <li><strong>Package:</strong> com.agile.fellowship.lotr</li>
+        <li><strong>Platform:</strong> Android</li>
+      </ul>
+
+      <h2>Legal</h2>
+      <p>
+        <a href="https://cevik10.github.io/FellowshipOfLotrPrivacyPolicy/">Privacy Policy</a> ·
+        <a href="https://cevik10.github.io/FellowshipOfLotrTermsOfUse/">Terms of Use</a>
+      </p>
+
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 1.5rem;">
+        Fellowship of LOTR is an independent fan app and is not affiliated with Middle-earth
+        Enterprises, Warner Bros., Amazon, or the Tolkien Estate.
+      </p>
+    </main>
+
+    <footer>
+      <p>© 2026 Agile Conqueror Company · Fellowship of LOTR</p>
+      <p>
+        <a href="https://cevik10.github.io/FellowshipOfLotrPrivacyPolicy/">Privacy Policy</a> ·
+        <a href="https://cevik10.github.io/FellowshipOfLotrTermsOfUse/">Terms of Use</a>
+      </p>
+    </footer>
+  </div>
 </body>
 </html>
